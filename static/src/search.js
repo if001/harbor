@@ -34,7 +34,7 @@ const queryNgramSeparator = (query) => {
   return tokens.join(' ')
 }
 
-const index = '../post/index.json'
+const index = '../../posts/index.json'
 
 const initLunr = () => {
   let request = new XMLHttpRequest()

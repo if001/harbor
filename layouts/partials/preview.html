@@ -1,10 +1,10 @@
-<div class="post-preview">
+<article class="post-preview">
   <a href="{{ .Permalink }}">
     <h2 class="post-title">
       {{ .Title }}
     </h2>
-  </a>  
-    
+  </a>
+
   <div class="post-entry">
     <p>{{ substr .Summary 0 150 }}</p>
     <a href="{{ .Permalink }}" class="post-read-more">{{ i18n "read-more" }}</a>
@@ -13,5 +13,4 @@
   <div class="postmeta">
     {{ partial "postmeta.html" . }}
   </div>
-
 </article>
