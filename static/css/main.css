@@ -22,12 +22,12 @@
 
 html {
     background-color: #FFFFFF;
-    font-size: 65.5%;
+    font-size: 55.5%;
     height: 100%;
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans JP', sans-serif;
@@ -40,8 +40,20 @@ body {
 }
 
 a {
+    color: #535353;
   outline: none;
   text-decoration: none;
+}
+a:visited {
+    color: #535353;
+}
+a:hover {
+    color: #9a9a9a;
+}
+
+
+img {
+    max-width: 90vw;
 }
 
 .error-text {
@@ -575,6 +587,10 @@ footer i {
 }
 
 @media (min-width: 600px) {
+    img {
+	max-width: 660px;
+    }
+
   .header {
     margin: auto;
   }
