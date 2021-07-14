@@ -23,8 +23,14 @@
               {{ else }}
 
               {{ if eq .Type "posts" }}
-                <h1>
-                  {{ with $title }}{{ . }}{{ else }}<br />{{ end }}
+              <h1>
+		{{ if $title }}
+		{{ $title }}
+		{{ if .Page.Draft }}
+		<span class="draft-tag">(Draft)</span>
+		{{ end }}
+		{{ else }}<br />
+		{{ end }}
                 </h1>
               {{ end }}
 
