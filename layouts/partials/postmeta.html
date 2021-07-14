@@ -1,13 +1,19 @@
-<span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}
-  {{ if .Params.categories }}
-    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
-    {{ range .Params.categories }}
-      <a
-        href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}{{ if $.Site.Params.uglyurls }}.html{{ else }}/{{ end }}"
-        >{{ . }}</a
-      >&nbsp;
-    {{ end }}
+<div class="meta-post blog-tags" style="display:inline-block">
+  <i class="fas fa-tag" style="color:#111111"></i>
+  {{ if .Params.tags }}
+  {{ range .Params.tags }}
+  <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
   {{ end }}
-</span>
+  {{ end }}
+</div>
+
+<div class="meta-post" style="display:inline-block; float: right;">
+  <i class="fa fa-calendar-alt"></i>&nbsp;{{ .Lastmod.Format ( .Site.Params.dateformat | default "2006-01-02") }}
+  {{ if .Params.categories }}
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    {{ range .Params.categories }}
+      <a href="{{ $.Site.BaseURL }}/categories/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+    {{ end }}
+      {{ end }}
+  </div>
+</div>
