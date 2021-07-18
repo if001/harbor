@@ -22,6 +22,9 @@
       <div class="article-main">
         {{ .Content }}
       </div>
+      <div class="related-article">
+        {{ partial "related.html" . }}
+      </div>
     </article>
     {{ if and (gt .WordCount 400) (.Param "backtotop") }}
       {{ partial "backtotop.html" . }}
