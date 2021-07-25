@@ -11,6 +11,7 @@
       {{ end }}
     </div>
 
+    {{ partial "adsense_horizontal.html" . }}
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
       <ul class="pager">
         {{ if .Paginator.HasPrev }}
