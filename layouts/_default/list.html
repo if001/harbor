@@ -11,12 +11,11 @@
       {{ end }}
     </div>
 
-    {{ partial "adsense_horizontal.html" . }}
+    <!-- {{ partial "adsense_horizontal.html" . }} -->
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
       <ul class="pager">
         {{ if .Paginator.HasPrev }}
           <li class="previous">
-            <!-- <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; {{ i18n "newer" }}</a> -->
             <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/"
               ><i class="fas fa-chevron-left"></i> Prev</a
             >
@@ -24,7 +23,6 @@
         {{ end }}
         {{ if .Paginator.HasNext }}
           <li class="next">
-            <!-- <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">{{ i18n "older" }} &rarr;</a> -->
             <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/"
               >Next <i class="fas fa-chevron-right"></i
             ></a>
