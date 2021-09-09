@@ -18,9 +18,10 @@
           {{ if eq .Type "list" }}
             <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
             {{ else }}
-            {{ if .IsHome }}
-              <h1 class="top-title">{{ .Title }}</h1>
-              {{ else }}
+	    {{ if .IsHome }}
+	    <div class='top-title'>{{.Title}}</div>
+	    <!-- <img src="{{ .Site.BaseURL }}/images/title.png"> -->
+	    {{ else }}
 
               {{ if eq .Type "posts" }}
               <h1>

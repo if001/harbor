@@ -16,33 +16,15 @@
   rel="stylesheet"
   href="{{ .Site.BaseURL }}/css/dark.css"
   disabled
-/>
+  />
+<link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/fontawesome/css/all.min.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <!-- font -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap"
-  rel="stylesheet"
-/>
-<!-- Katex -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css"
-/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js"></script>
-<script>
-  $(document).ready(function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: '[[', right: ']]', display: true },
-        { left: '$', right: '$', display: false },
-      ],
-    })
-  })
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
 <!-- script -->
 <script src="{{ .Site.BaseURL }}/js/main.bundle.js"></script>
 <script src="{{ .Site.BaseURL }}/js/instantpage.min.js" type="module" defer></script>
