@@ -218,6 +218,9 @@ h3 {
 #TableOfContents ul ul {
   list-style-type: disc;
 }
+ul {
+    padding-inline-start: 20px;
+}
 li a {
     color: #535353;
 }
@@ -692,4 +695,14 @@ footer i {
 
 .draft-tag {
     color: red;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

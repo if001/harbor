@@ -11,9 +11,9 @@
       </a>
     {{ end }}
 
-    <ul class="nav-links">
+      <ul class="nav-links">
       {{ range .Site.Params.nav }}
-        {{ if .icon }}
+      {{ if .icon }}
           <li>
             <a href="{{ .url | relLangURL }}" name="{{ .name }}" class="tooltip"
               ><i class="{{ .icon }}"></i>

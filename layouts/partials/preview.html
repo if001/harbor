@@ -1,11 +1,20 @@
 <article class="post-preview">
   <a href="{{ .Permalink }}">
-    <h2 class="post-title">
-      {{ .Title }}
-      {{ if .Page.Draft }}
-      <span class="draft-tag">(Draft)</span>
-      {{ end }}
-    </h2>   
+    <div>
+      <h2 class="post-title">
+	<div style="display:flex;align-items:center">
+	<span style="flex-shrink:0">
+	{{ .Title }}
+	{{ if .Page.Draft }}
+	<span class="draft-tag">(Draft)</span>
+	{{ end }}
+	</span>
+	{{ range .Params.Author }}
+	<span class="ellipsis"style="padding-left:0.5em; font-size:0.6em; font-weight:300">{{ . }}</span>
+	{{ end }}
+	</div>
+      </h2>
+    </div>
   </a>
 
   <div class="post-entry">
