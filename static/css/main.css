@@ -168,6 +168,10 @@ h3 {
   word-break: break-word;
 }
 
+.container img {
+  max-width: 100%;
+}
+
 #blog-archives {
   margin: 20px auto;
   font-size: 1.4rem;
