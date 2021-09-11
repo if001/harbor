@@ -36,17 +36,4 @@
     "webpack": "^5.28.0",
     "webpack-cli": "^4.5.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "layouts/**/!(bundle).html": [
-      "prettier-eslint --write $PWD/'static/src/**/*.js' $PWD/'layouts/**/*.html'"
-    ],
-    "static/src/*.js": [
-      "eslint $PWD/'static/src/*.js'"
-    ]
-  }
 }

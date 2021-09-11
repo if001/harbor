@@ -1,3 +1,5 @@
+a:{{ .Site.IsServer }}
+b:{{ .Site.GoogleAnalytics }}
 {{ if not .Site.IsServer }}
   {{ with .Site.GoogleAnalytics }}
     <!-- Global site tag (gtag.js) - Google Analytics -->
