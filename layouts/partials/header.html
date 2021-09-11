@@ -32,7 +32,8 @@
 	      {{ else }}<br />
 	      {{ end }}
             </h1>
-	    {{ range .Params.Author }}
+
+	    {{ range .Params.Authors }}
 	    <div style="text-align:center;">
 	      {{ . }}
 	      {{ end }}
@@ -41,13 +42,13 @@
 	    
             {{ if eq .Type "authors" }}
             <h1 style="font-size:2em;">
-              <i class="fas fa-user" style="margin-right:10px"></i>{{ with $title }}{{ . }}{{ else }}<br />{{ end }}                  
+              <i class="fas fa-user" style="margin-right:10px"></i>{{ with $title }}<span class="nav-title">{{ . }}</span>{{ else }}<br />{{ end }}
             </h1>
             {{ end }}
 	      
             {{ if eq .Type "tags" }}
             <h1 style="font-size:2em;">
-              <i class="fas fa-tag" style="margin-right:10px"></i>{{ with $title }}{{ . }}{{ else }}<br />{{ end }}				
+              <i class="fas fa-tag" style="margin-right:10px"></i>{{ with $title }}<span class="nav-title">{{ . }}</span>{{ else }}<br />{{ end }}
             </h1>
             {{ end }}
 
