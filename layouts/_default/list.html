@@ -2,7 +2,7 @@
   <div class="container" role="main">
     <div class="posts-list">
       {{ if .IsHome }}
-        {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) 20 }}
+        {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) 10 }}
         {{ else }}
         {{ $pag := .Paginator.Pages }}
       {{ end }}
@@ -11,7 +11,7 @@
       {{ end }}
     </div>
 
-    <!-- {{ partial "adsense_horizontal.html" . }} -->
+    {{ partial "adsense_horizontal.html" . }}
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
       <ul class="pager">
         {{ if .Paginator.HasPrev }}
