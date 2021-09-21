@@ -3,7 +3,11 @@
   <h2>See Also</h2>
   <ul>
     {{ range . }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}
+	{{ range .Params.Authors }}
+	<span style="font-size:0.5em;">({{.}})</span>
+	{{ end }}
+    </a></li>
     {{ end }}
   </ul>
 {{ end }}
