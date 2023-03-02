@@ -1,0 +1,14 @@
+<div class="code-block">
+  <div class="body">
+    {{- $name := .Attributes.name -}}
+    {{ with $name }}<div class="name">{{ . }}</div>{{ end }}
+    {{- highlight (.Inner | safeHTML) .Type .Options }}
+  </div>
+  {{- $ref := .Attributes.ref -}}
+  {{ with $ref }}
+    <div class="ref">
+      <span class="label">参照:</span
+      ><a href="{{ . }}" target="_black">{{ . }}</a>
+    </div>{{ end }}
+
+</div>
