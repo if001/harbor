@@ -1,6 +1,6 @@
 {{ define "main" }}
-  <div class="container" role="main"
-    <div class="posts-list"
+  <div class="container" role="main">
+    <div class="posts-list">
       {{ if .IsHome }}
         {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) 20 }}
         {{ else }}
@@ -9,26 +9,26 @@
       {{ range .Paginator.Pages }}
         {{ partial "preview.html" . }}
       {{ end }}
-    </div
+    </div>
 
-    <!-- {{ partial "adsense_horizontal.html" . }} --
+    <!-- {{ partial "adsense_horizontal.html" . }} -->
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-      <ul class="pager"
+      <ul class="pager">
         {{ if .Paginator.HasPrev }}
-          <li class="previous"
+          <li class="previous">
             <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/"
-              <i class="fas fa-chevron-left"</i Prev</a
-
-          </li
+              ><i class="fas fa-chevron-left"></i> Prev</a
+            >
+          </li>
         {{ end }}
         {{ if .Paginator.HasNext }}
-          <li class="next"
+          <li class="next">
             <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/"
-              Next <i class="fas fa-chevron-right"</i
-            </a
-          </li
+              >Next <i class="fas fa-chevron-right"></i
+            ></a>
+          </li>
         {{ end }}
-      </ul
+      </ul>
     {{ end }}
-  </div
+  </div>
 {{ end }}

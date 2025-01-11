@@ -11,7 +11,6 @@
   title="{{ .Site.Title }}"
 />
 <!-- Stylesheets -->
-<!-- Stylesheets -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}fontawesome/css/all.min.css" />
 
 {{ $main := resources.Get "css/main.css" }}
@@ -25,9 +24,9 @@
   as="style"
 />
 
-{{ range .Site.Params.customCSS }}>
+{{ range .Site.Params.customCSS }}
   <link rel="stylesheet" href="{{ . | absURL }}" />
-{{ end }}>
+{{ end }}
 
 {{ $dark := resources.Get "css/dark.css" | minify }}
 <link
@@ -38,24 +37,14 @@
   rel="preload stylesheet"
   as="style"
 />
-<!-- font --
+
+<!-- font -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap"
   rel="stylesheet"
 />
-<!-- Load theme mode from browser cache -->
-<script>
-  var darkTheme = document.getElementById('dark-mode-theme')
-  var storedTheme = localStorage.getItem('dark-mode-storage')
-
-  if (storedTheme === 'dark') {
-    darkTheme.disabled = false
-  } else if (storedTheme === 'light') {
-    darkTheme.disabled = true
-  }
-</script>
 <!-- Katex -->
 <link
   rel="stylesheet"
@@ -73,6 +62,18 @@
     })
   })
 </script>
+
+<!-- Load theme mode from browser cache -->
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
 <!-- script -->
 {{ $theme := resources.Get "js/theme.js" }}
 <script defer crossorigin="anonymous" src="{{ $theme.RelPermalink }}" integrity="{{ $theme.Data.Integrity }}"></script>
@@ -80,9 +81,9 @@
 {{ $instantpage := resources.Get "js/instantpage.min.js" }}
 <script defer crossorigin="anonymous" src="{{ $instantpage.RelPermalink }}" integrity="{{ $instantpage.Data.Integrity }}"></script>
 
-{{- if (eq .Layout `search`) -}}>
+{{- if (eq .Layout `search`) -}}
   {{ $flexsearch := resources.Get "js/flexsearch.bundle.js" }}
-  <script defer crossorigin="anonymous" src="{{ $flexsearch.RelPermalink }}" integrity="{{ $flexsearch.Data.Integrity }}"</script>
+  <script defer crossorigin="anonymous" src="{{ $flexsearch.RelPermalink }}" integrity="{{ $flexsearch.Data.Integrity }}"></script>
 
   {{ $mark := resources.Get "js/mark.min.js" }}
   {{ $basesearch := resources.Get "js/search.js" }}
@@ -90,19 +91,19 @@
   {{ $searchJSFile := printf "js/%s.search.js" .Language.Lang }}
   {{ $search := (slice $mark $basesearch) | resources.Concat "js/search.js" | resources.ExecuteAsTemplate $searchJSFile . | resources.Fingerprint }}
   <script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
-{{- end -}}>
+{{- end -}}
 
-<!-- meta description --
-{{ if .IsHome }}>
-  {{ with .Site.Params.description }}>
+<!-- meta description -->
+{{ if .IsHome }}
+  {{ with .Site.Params.description }}
     <meta name="description" content="{{ . }}" />
-  {{ end }}>
+  {{ end }}
   {{ else }}
-  {{ if .Description }}>
+  {{ if .Description }}
     <meta name="description" content="{{ substr .Description 0 150 }}" />
     {{ else }}
     <meta name="description" content="{{ substr .Summary 0 150 }}" />
-  {{ end }}>
-{{ end }}>
+  {{ end }}
+{{ end }}
 
 {{ hugo.Generator -}}

@@ -1,19 +1,19 @@
-<article class="post-preview"
-  <a href="{{ .Permalink }}"
-    <h2 class="post-title"
+<article class="post-preview">
+  <a href="{{ .Permalink }}">
+    <h2 class="post-title">
       {{ .Title }}
       {{ if .Page.Draft }}
-        <span class="draft-tag"(Draft)</span
+      <span class="draft-tag">(Draft)</span>
       {{ end }}
-    </h2
-  </a
+    </h2>   
+  </a>
 
-  <div class="post-entry"
-    <p{{ substr .Summary 0 150 }}</p
-    <a href="{{ .Permalink }}" class="post-read-more"{{ i18n "read-more" }}</a
-  </div
+  <div class="post-entry">
+    <p>{{ substr .Summary 0 150 }}</p>
+    <a href="{{ .Permalink }}" class="post-read-more">{{ i18n "read-more" }}</a>
+  </div>
 
-  <div class="postmeta"
+  <div class="postmeta">
     {{ partial "postmeta.html" . }}
-  </div
-</article
+  </div>
+</article>

@@ -10,51 +10,51 @@
 
 {{ $title := $.Scratch.Get "title" }}
 {{ if $title }}
-  <header
+  <header>
     {{ partial "nav.html" . }}
-    <div class="intro-header"
-      <div class="container"
-        <div class="{{ .Type }}-heading"
+    <div class="intro-header">
+      <div class="container">
+        <div class="{{ .Type }}-heading">
           {{ if eq .Type "list" }}
-            <h1{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1
+            <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
             {{ else }}
             {{ if .IsHome }}
-              <h1 class="top-title"{{ .Title }}</h1
+              <h1 class="top-title">{{ .Title }}</h1>
               {{ else }}
 
               {{ if eq .Type "posts" }}
-                <h1
-                  {{ if $title }}
-                    {{ $title }}
-                    {{ if .Page.Draft }}
-                      <span class="draft-tag"(Draft)</span
-                    {{ end }}
-                    {{ else }}<br /
-                  {{ end }}
-                </h1
+              <h1>
+		{{ if $title }}
+		{{ $title }}
+		{{ if .Page.Draft }}
+		<span class="draft-tag">(Draft)</span>
+		{{ end }}
+		{{ else }}<br />
+		{{ end }}
+                </h1>
               {{ end }}
 
               {{ if eq .Type "tags" }}
-                <h1 style="font-size:2em;"
-                  <i class="fas fa-tag" style="margin-right:10px"</i
-                  {{ with $title }}{{ . }}{{ else }}<br /{{ end }}
-                </h1
+                <h1 style="font-size:2em;">
+                  <i class="fas fa-tag" style="margin-right:10px"></i
+                  >{{ with $title }}{{ . }}{{ else }}<br />{{ end }}
+                </h1>
               {{ end }}
 
               {{ if eq .Type "pages" }}
-                <h1 style="font-size:2em;"
-                  {{ with $title }}{{ . }}{{ else }}<br /{{ end }}
-                </h1
+                <h1 style="font-size:2em;">
+                  {{ with $title }}{{ . }}{{ else }}<br />{{ end }}
+                </h1>
               {{ end }}
             {{ end }}
           {{ end }}
-          <!-- <BPGT192EPGT -->
+          <!-- {{ if eq .Type "posts" }} -->
           <!--   {{ partial "postmeta.html" . }} -->
           <!-- {{ end }} -->
-        </div
-      </div
-    </div
-  </header
+        </div>
+      </div>
+    </div>
+  </header>
   {{ else }}
-  <div class="intro-header"</div
+  <div class="intro-header"></div>
 {{ end }}
