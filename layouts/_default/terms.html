@@ -1,19 +1,19 @@
 {{ define "main" }}
-  <div class="container tags-container" role="main">
-    <article class="post-preview">
+  <div class="container tags-container" role="main"
+    <article class="post-preview"
       {{ range .Data.Terms.Alphabetical }}
-        <div class="terms">
-          <a href="{{ .Page.Permalink }}" class="term-link">
+        <div class="terms"
+          <a href="{{ .Page.Permalink }}" class="term-link"
             {{ .Page.Title }}
-            <span class="badge">{{ .Count }}</span>
-          </a>
+            <span class="badge"{{ .Count }}</span
+          </a
           <!-- <h4 class="term-name" > -->
           <!--   <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> -->
           <!--   <span class="badge">{{ .Count }}</span> -->
           <!-- </h4> -->
-        </div>
+        </div
       {{ end }}
-      <!-- {{ partial "adsense_horizontal.html" . }} -->
-    </article>
-  </div>
+      <!-- {{ partial "adsense_horizontal.html" . }} --
+    </article
+  </div
 {{ end }}

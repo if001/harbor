@@ -22,7 +22,7 @@
 
 html {
     background-color: #FFFFFF;
-    font-size: 12px;
+    font-size: 10px;
     height: 100%;
 }
 
@@ -200,7 +200,7 @@ h5 {
 
 .article {
     text-align: justify;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .article-main {
