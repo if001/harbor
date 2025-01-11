@@ -17,14 +17,14 @@
         {{ if .Paginator.HasPrev }}
           <li class="previous">
             <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/"
-              ><i class="fas fa-chevron-left"></i> Prev</a
+              ><i class="fas fa-chevron-left"></i></a
             >
           </li>
         {{ end }}
         {{ if .Paginator.HasNext }}
           <li class="next">
             <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/"
-              >Next <i class="fas fa-chevron-right"></i
+              ><i class="fas fa-chevron-right"></i
             ></a>
           </li>
         {{ end }}
