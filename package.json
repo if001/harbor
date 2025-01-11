@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier-eslint --write $PWD/'assets/js/theme.js' $PWD/'layouts/**/*.html'; eslint $PWD/'assets/js/theme.js'",
+    "eslint": "eslint $PWD/'assets/js/theme.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,25 +17,11 @@
   },
   "devDependencies": {
     "eslint": "^7.23.0",
-    "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "mark.js": "^8.11.1",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
     "prettier-eslint-cli": "^5.0.1",
     "prettier-plugin-go-template": "^0.0.10"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "layouts/**/!(bundle).html": [
-      "npm run format"
-    ],
-    "static/src/*.js": [
-      "./node_modules/eslint/bin/eslint.js $PWD/'assets/js/theme.js'"
-    ]
   }
 }
