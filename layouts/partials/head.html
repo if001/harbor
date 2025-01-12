@@ -11,7 +11,7 @@
   title="{{ .Site.Title }}"
 />
 <!-- Stylesheets -->
-<link rel="stylesheet" href="{{ .Site.BaseURL }}fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/fontawesome/css/all.min.css" />
 
 {{ $main := resources.Get "css/main.css" }}
 {{ $syntax := resources.Get "css/syntax.css" }}
@@ -24,9 +24,9 @@
   as="style"
 />
 
-{{ range .Site.Params.customCSS }}
+<!-- {{ range .Site.Params.customCSS }}
   <link rel="stylesheet" href="{{ . | absURL }}" />
-{{ end }}
+{{ end }} -->
 
 {{ $dark := resources.Get "css/dark.css" | minify }}
 <link
@@ -39,12 +39,12 @@
 />
 
 <!-- font -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap"
   rel="stylesheet"
-/>
+/> -->
 <!-- Katex -->
 <link
   rel="stylesheet"
