@@ -1,0 +1,10 @@
+{{- $display:= .Get "display" -}}
+{{- if eq $display "block" -}}
+<div>{{- .Inner -}}</div>
+{{- else if eq $display "inline" -}}
+<span>{{- .Inner -}}</span>
+{{- else -}}
+{{- .Inner -}}
+{{- end -}}
+
+
