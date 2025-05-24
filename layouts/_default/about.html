@@ -29,19 +29,19 @@
   </style>
   <div class="content social">
     <h3>Me</h3>
-    {{ .Site.Author.name }}
+    {{ .Site.Params.Author.name }}
   </div>
   
   <div class="content social">
     <h3>Description</h3>
     <div style="width: 60%; margin: auto;">
-      {{ .Site.Author.discription }}
+      {{ .Site.Params.Author.discription }}
     </div>
   </div>
   
   <div class="content social">
     <h3>Language</h3>
-    {{ range .Site.Author.language }}
+    {{ range .Site.Params.Author.language }}
       <span style="padding-left: 10px;">{{ . }} </span>
     {{ end }}
   </div>
