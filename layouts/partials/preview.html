@@ -5,12 +5,14 @@
       {{ if .Page.Draft }}
       <span class="draft-tag">(Draft)</span>
       {{ end }}
-    </h2>   
+    </h2>
   </a>
 
   <div class="post-entry">
-    <p>{{ substr .Summary 0 150 }}</p>
-    <a href="{{ .Permalink }}" class="post-read-more">{{ i18n "read-more" }}</a>
+    <p>{{ .Summary | plainify | strings.Truncate 150 }}</p>
+    {{ if .Truncated }}
+    <a href="{{ .RelPermalink }}" class="post-read-more">{{ i18n "read-more" }}</a>
+    {{ end }}
   </div>
 
   <div class="postmeta">
