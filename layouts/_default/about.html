@@ -3,6 +3,11 @@
     .content {
       text-align: center;
       margin-bottom: 30px;
+      display: flex;
+      justify-content: center
+    }
+    .inner {
+      max-width: 600px;
     }
     .social {
     }
@@ -27,28 +32,32 @@
       color: #999999;
     }
   </style>
-  <div class="content social">
+  <div class="content">
+    <div class="inner">
+  <div class="social">
     <h3>Me</h3>
-    {{ .Site.Author.name }}
+    {{ .Site.Params.Author.name }}
   </div>
   
-  <div class="content social">
+  <div class="social">
     <h3>Description</h3>
     <div style="width: 60%; margin: auto;">
-      {{ .Site.Author.discription }}
+      {{ .Site.Params.Author.discription }}
     </div>
   </div>
   
-  <div class="content social">
+  <div class="social">
     <h3>Language</h3>
-    {{ range .Site.Author.language }}
+    {{ range .Site.Params.Author.language }}
       <span style="padding-left: 10px;">{{ . }} </span>
     {{ end }}
   </div>
   
-  <div class="content social">
+  <div class="social">
     <h3>Twitter<i class="fab fa-twitter" style="padding-left: 10px;"></i></h3>
     <a href="https://twitter.com/if_004" target="_blank"> if_004 </a>
+  </div>
+</div>
   </div>
   
   <!-- <div class="content social">
