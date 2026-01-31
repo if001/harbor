@@ -1,31 +1,32 @@
 {{ define "main" }}
   <div class="container" role="main">
     <article class="article" class="blog-post">
-      {{ if .Params.tags }}
-        <div class="blog-tags">
-          <i class="fas fa-tag" style="color:#111111"></i>
-          {{ range .Params.tags }}
-            <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a
-            >&nbsp;
-          {{ end }}
-        </div>
-      {{ end }}
 
-      {{ if ne .Type "pages" }}
-        <div style="margin-bottom: 10px;">
-          <i class="fa fa-calendar-alt"></i
-          >&nbsp;{{ .Lastmod.Format ( .Site.Params.dateformat | default "2006-01-02") }}
-        </div>
-      {{ end }}
+      <!-- tags -->
+      <div class="postmeta mb-4">
+        {{ partial "postmeta.html" . }}
+      </div>
+      <!-- tags -->
 
+
+      <!-- article -->
       {{ partial "toc.html" . }}
       <div class="article-main">
         {{ .Content }}
       </div>
+      <!-- article -->
+
+      <!-- tags -->
+      <div class="postmeta mb-2">
+        {{ partial "postmeta.html" . }}
+      </div>
+      <!-- tags -->
+
       <div class="related-article">
         {{ partial "related.html" . }}
       </div>
     </article>
+
     <!-- {{ partial "adsense_horizontal.html" . }} -->
     {{ if and (gt .WordCount 400) (.Param "backtotop") }}
       {{ partial "backtotop.html" . }}
