@@ -595,18 +595,19 @@ code {
 input.searchBox {
     position: absolute;
     width: 100%;
-    padding: 0 35px 0 15px;
+    padding: 0 10px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 15px;
+    border-radius: 8px;
     outline: 0;
     font-size: 1.6rem;
     color: #707070;
     background-color:#f6f6f6;
     border: solid 1px #c9c9c9;
     box-sizing: border-box;
+    height: 2.8rem
 }
 
 .searchBox::placeholder {
@@ -615,30 +616,26 @@ input.searchBox {
 
 .searchResults {
     display: none;
-    max-width: 600px;
+    max-width: var(--max-width);
     min-width: 300px;
     margin: 0 auto;
     top: 210px;
     left: 0;
     right: 0;
-    padding: 5px;
-    border-radius: 5px;
     text-align: left;
 }
 
 .searchResultPage {
-    padding: 14px
+    padding-bottom: 3rem;
 }
 
 .searchResultTitle {
-    font-family: 'Roboto', Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 2.4rem;
-    margin: 5px 0;
+    font-size: 1.5rem;
 }
 
 .searchResultBody {
-    font-size: 1.6rem;
+    font-size: 1.0rem;
 }
 
 mark {
