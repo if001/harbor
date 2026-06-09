@@ -1,25 +1,18 @@
 <article class="post-preview">
   <a href="{{ .Permalink }}">
-    <div>
-      <h2 class="post-title">
-	<div style="display:flex;align-items:center">
-	<span style="flex-shrink:0">
-	{{ .Title }}
-	{{ if .Page.Draft }}
-	<span class="draft-tag">(Draft)</span>
-	{{ end }}
-	</span>
-	{{ range .Params.Authors }}
-	<span class="ellipsis"style="padding-left:0.5em; font-size:0.6em; font-weight:300">{{ . }}</span>
-	{{ end }}
-	</div>
-      </h2>
-    </div>
+    <h2 class="post-title">
+      {{ .Title }}
+      {{ if .Page.Draft }}
+      <span class="draft-tag">(Draft)</span>
+      {{ end }}
+    </h2>
   </a>
 
   <div class="post-entry">
     <p>{{ .Summary | plainify | strings.Truncate 150 }}</p>
-    <a href="{{ .Permalink }}" class="post-read-more">{{ i18n "read-more" }}</a>
+    {{ if .Truncated }}
+    <a href="{{ .RelPermalink }}" class="post-read-more">{{ i18n "read-more" }}</a>
+    {{ end }}
   </div>
 
   <div class="postmeta">
