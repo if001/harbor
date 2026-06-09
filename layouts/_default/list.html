@@ -2,9 +2,9 @@
   <div class="container" role="main">
     <div class="posts-list">
       {{ if .IsHome }}
-        {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) 10 }}
-        {{ else }}
-        {{ $pag := .Paginator.Pages }}
+      {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) 10 }}
+      {{ else }}
+      {{ $pag := .Paginator.Pages }}
       {{ end }}
       {{ range .Paginator.Pages }}
         {{ partial "preview.html" . }}

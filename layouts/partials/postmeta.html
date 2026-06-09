@@ -2,9 +2,9 @@
   <div class="meta-post blog-tags">
     <i class="fas fa-tag" style="color:#111111"></i>
     {{ if .Params.tags }}
-    {{ range .Params.tags }}
+    {{ range (.GetTerms "tags") }}
     <span class="blog-tag">
-      <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>&nbsp;
     </span>
     {{ end }}
     {{ end }}

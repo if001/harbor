@@ -1,0 +1,9 @@
+{{ if .Params.item_link }}
+<div style="text-align: center">
+  <a href={{ .Params.item_link }} target="_blank">
+	{{ if .Params.item_img }}
+	<img src={{ .Params.item_img }} />
+	{{ end }}
+  </a>
+</div>
+{{ end }}

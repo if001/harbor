@@ -39,11 +39,17 @@
               {{ with $title }}{{ . }}{{ else }}<br />{{ end }}
             </h1>
             {{ end }}
+
+            {{ if eq .Type "authors" }}
+            <h1>{{ .Page.Title }}</h1>
+            {{ end }}
+
+            {{ if eq .Type "tags" }}
+            <h1>{{ .Page.Title }}</h1>
+            {{ end }}
+
             {{ end }}
             {{ end }}
-          <!-- {{ if eq .Type "posts" }} -->
-          <!--   {{ partial "postmeta.html" . }} -->
-          <!-- {{ end }} -->
         </div>
       </div>
     </div>
