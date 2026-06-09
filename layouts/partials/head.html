@@ -11,23 +11,96 @@
   title="{{ .Site.Title }}"
   />
 <!-- Stylesheets -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/fontawesome/css/all.min.css" />
+
+{{ $main := resources.Get "css/main.css" }}
+{{ $syntax := resources.Get "css/syntax.css" }}
+{{ $styles := (slice $main $syntax) | resources.Concat "css/styles.css" | minify }}
+<link
+  crossorigin="anonymous"
+  href="{{ $styles.RelPermalink }}"
+  integrity="{{ $styles.Data.Integrity }}"
+  rel="preload stylesheet"
+  as="style"
+/>
+
+<!-- {{ range .Site.Params.customCSS }}
+  <link rel="stylesheet" href="{{ . | absURL }}" />
+{{ end }} -->
+
+{{ $dark := resources.Get "css/dark.css" | minify }}
 <link
   id="dark-mode-theme"
-  rel="stylesheet"
-  href="{{ .Site.BaseURL }}/css/dark.css"
-  disabled
-  />
-<link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico" />
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/fontawesome/css/all.min.css" />
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  crossorigin="anonymous"
+  href="{{ $dark.RelPermalink }}"
+  integrity="{{ $dark.Data.Integrity }}"
+  rel="preload stylesheet"
+  as="style"
+/>
+
 <!-- font -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&display=swap"
+  rel="stylesheet"
+/> -->
+<!-- Katex -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+<!-- Katex -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+
+<!-- Load theme mode from browser cache -->
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
 <!-- script -->
-<script src="{{ .Site.BaseURL }}/js/main.bundle.js"></script>
-<script src="{{ .Site.BaseURL }}/js/instantpage.min.js" type="module" defer></script>
+{{ $theme := resources.Get "js/theme.js" }}
+<script defer crossorigin="anonymous" src="{{ $theme.RelPermalink }}" integrity="{{ $theme.Data.Integrity }}"></script>
+
+{{ $instantpage := resources.Get "js/instantpage.min.js" }}
+<script defer crossorigin="anonymous" src="{{ $instantpage.RelPermalink }}" integrity="{{ $instantpage.Data.Integrity }}"></script>
+
+{{- if (eq .Layout `search`) -}}
+  {{ $flexsearch := resources.Get "js/flexsearch.bundle.js" }}
+  <script defer crossorigin="anonymous" src="{{ $flexsearch.RelPermalink }}" integrity="{{ $flexsearch.Data.Integrity }}"></script>
+
+  {{ $mark := resources.Get "js/mark.min.js" }}
+  {{ $basesearch := resources.Get "js/search.js" }}
+
+  {{ $searchJSFile := printf "js/%s.search.js" .Language.Lang }}
+  {{ $search := (slice $mark $basesearch) | resources.Concat "js/search.js" | resources.ExecuteAsTemplate $searchJSFile . | resources.Fingerprint }}
+  <script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
+{{- end -}}
 
 <!-- meta description -->
 {{ if .IsHome }}
