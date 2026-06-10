@@ -34,6 +34,15 @@
             </h1>
             {{ end }}
 
+            <div>
+              {{ range .Params.Authors }}
+	          <span style="color:#535353;padding-right:1rem;">
+	            {{ . }}
+	          </span>
+              {{ end }}
+            </div>
+
+
             {{ if eq .Type "pages" }}
             <h1 style="font-size:2em;">
               {{ with $title }}{{ . }}{{ else }}<br />{{ end }}

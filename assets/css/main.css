@@ -22,7 +22,7 @@
 
 html {
     background-color: #FFFFFF;
-    font-size: 55.5%;
+    font-size: 16px;
     height: 100%;
 }
 
@@ -31,7 +31,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.0rem;
   color: #42464c;
   background: 0 0;
   flex-flow: column;
@@ -104,7 +104,7 @@ hr {
 .nav-links {
   margin: 0;
   padding: 0;
-  font-size: 2.0rem;
+  font-size: 1.0rem;
   list-style: none;
 }
 
@@ -138,7 +138,7 @@ hr {
 .intro-header .archives-heading h1 {
   margin-top: 0;
   padding-top: 0;
-  font-size: 4.0rem;
+  /* font-size: 4.0rem; */
 }
 
 .intro-header .post-heading h1 {
@@ -167,7 +167,7 @@ h3 {
 .container[role=main] {
   max-width: 660px;
   padding: 0px 20px 4rem 20px;
-  font-size: 1.6rem;
+  font-size: 1.0rem;
   line-height: 1.7;
   color: #535353;
   background-color: white;
@@ -271,7 +271,7 @@ p + p {
 .blog-tags {
   font-family: 'Roboto', Helvetica, sans-serif;
   color: #999999;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   margin-bottom: 10px;
 }
 
@@ -553,7 +553,7 @@ mark {
   font-family: 'Roboto', Helvetica, sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   font-weight: 800;
   letter-spacing: 1px;
   padding: 10px 5px;
@@ -583,7 +583,7 @@ footer {
   padding: 60px 0;
   text-align: center;
   margin-top: auto;
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   font-family: 'Roboto', Helvetica, sans-serif;
 }
 
@@ -617,7 +617,7 @@ footer i {
   }
 
   .nav-links {
-      font-size: 1.8rem;
+      font-size: 1.0rem;
   }
 
   .nav-links li {
@@ -625,7 +625,7 @@ footer i {
   }
 
   .container[role=main] {
-    font-size: 1.6rem;
+    font-size: 1.0rem;
     line-height: 1.8;
     margin: 0px auto;
   }
@@ -695,7 +695,7 @@ footer i {
 .top-title {
     font-family: 'Hina Mincho', serif;
     font-weight: 500;
-    font-size: 4rem !important;
+    font-size: 3rem !important;
     padding: 0 20px;
     margin: 2em auto;
 }
