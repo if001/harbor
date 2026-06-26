@@ -22,7 +22,8 @@
 
 
 :root {
-    --accent-color: #3498db;
+    /* --accent-color: #3498db; */
+    --accent-color: #00A5BF;
     --fg-primary: #08131a;
     --fg-secondary: #535353;
     --fg-lighter: #9a9a9a;
@@ -47,9 +48,9 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  /* font-family: 'Noto Sans JP', sans-serif; */
+  font-family: sans-serif;
   /* font-family: '-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","Hiragino Kaku Gothic ProN","Hiragino Sans",Arial,Meiryo,sans-serif'; */
-  font-family: "Helvetica Neue","Hiragino Sans","Hiragino Kaku Gothic ProN",Arial,"Noto Sans JP",Meiryo,sans-serif;
+  /* font-family: "Helvetica Neue","Hiragino Sans","Hiragino Kaku Gothic ProN",Arial,"Noto Sans JP",Meiryo,sans-serif; */
   font-size: 1.0rem;
   /* color: #42464c; */
   color: var(--fg-primary);
@@ -242,7 +243,7 @@ h5 {
 }
 
 .article {
-    text-align: justify;
+    /* text-align: justify; */
     /* word-break: break-word; */
     word-break: normal;
     word-wrap: break-word;
@@ -334,14 +335,17 @@ p + p {
 
 .blog-tags {
     font-family: 'Roboto', Helvetica, sans-serif;
-    font-size: 1.0rem;
-    flex-grow: 1;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
     padding-right: 10px;
+    align-items: center;
 }
 
 .blog-tag {
     border: 1px solid rgba(8,19,26,0.1411764705882353);
-    padding: 4px 10px;
+    padding: 2px 8px;
     border-radius: 8px;
     margin-left: 0.4rem;
     cursor: pointer;
